@@ -9,7 +9,7 @@ const TagPage = () => {
 
     const naviagation = useNavigate();
 
-    const location = useLocation();//using useLocation() hook to extract the value of tag from current location or current URL
+    const location = useLocation();
 
     const tag = location.pathname.split("/").at(-1).replaceAll("-"," ")
    
