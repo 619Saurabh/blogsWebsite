@@ -10,8 +10,8 @@ const CategoryPage = () => {
     const navigation = useNavigate();
     const location = useLocation();
     const category = location.pathname.split("/").at(-1).replaceAll("-"," ");
-    //Extracting the value of category which is the last path in current location or current URL by splitting paths(pathname) on the basis of 
-    //"/"(forward slash) and replcaing hyphen(-) with space(" ") if any contains in value of category
+    //Extracting the value of category which is the last path in current location or current URL by splitting paths on the basis of 
+    //"/" and replcaing hyphen(-) with space(" ") if any contains
   return (
     <div className="w-full h-full flex flex-col gap-y-1 items-center justify-center">
         <Header/>
