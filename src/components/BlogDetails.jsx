@@ -19,7 +19,7 @@ const BlogDetails = ({post}) => {
         <p className='text-sm mt-[4px]'>Posted on {post.date}</p>
         <p className='text-md mt-[10px]'>{post.content}</p>
        
-       {/*Mapping all the tags stored in tags array(or list) inside a post with <NavLink> tag*/}
+
         <div className='flex gap-x-2'>
             {post.tags.map((tag, index) => (
                 <NavLink key={index} to={`/tags/${tag.replaceAll(" ","-")}`}>
