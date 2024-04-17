@@ -17,8 +17,6 @@ export default function Blogs() {
         </div>
       ) : (
         posts.map((post) => (
-          //So, for each post or blog in posts array(list) using map() function we are creating/rendering this card/card component 
-          //<BlogDetails/> which shows each blog or post in UI
           <BlogDetails key={post.id} post={post}/>
         ))
       )}
