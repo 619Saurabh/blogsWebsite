@@ -16,14 +16,13 @@ export default function App() {
 
   
   const[searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();//useLocation() hook returns an object with properties pathname, search, hash and state
-
+  const location = useLocation();
   useEffect(() => {
 
-    //We have to extratct the page no. or value of page from search parameters or query parameters inside URL or API URL
+    //Extracting page no. from search parameters inside URL 
     const page = searchParams.get("page") ?? 1;
 
-   if(location.pathname.includes("tags")){ //Check if current location(or current URL) includes(contain) path tags in it,
+   if(location.pathname.includes("tags")){ //Check if current location(or current URL) contain path tags in it,
 
     const tag = location.pathname.split("/").at(-1).replaceAll("-"," ");
     //Extracting the value of tag which is the last path in current location or current URL by splitting paths on the basis of "/" and 
@@ -31,7 +30,7 @@ export default function App() {
     
     fetchBlogPosts(Number(page), tag);
   }
-  else if(location.pathname.includes("categories")){//Check if current location(or current URL) includes(contain) path categories in it,
+  else if(location.pathname.includes("categories")){//Check if current location(or current URL) contain path categories in it
 
     const category = location.pathname.split('/').at(-1).replaceAll("-"," ");
 
@@ -45,12 +44,11 @@ export default function App() {
 
   }, [location.pathname, location.search]);//So, whenever there is a change in path  or search parameter of location or current URL then this 
   // useEffect() will be triggered 
-  //So inside this useEffect() we called async function fetchBlogPosts() in a way that it can call three different APIs according to the 
-  //requirement 
+
 
 
   return (
-     //Creating or defininig all our routes for differnt pages or components
+     //Creating or defininig all our routes for differnt pages 
      <Routes>
          <Route path="/" element={<Home/>} />          
          <Route path="/blog/:blogId" element={<BlogPage/>}/>  
