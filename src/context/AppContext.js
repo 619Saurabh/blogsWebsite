@@ -15,8 +15,8 @@ export default function AppContextProvider({ children }) {
   // Fetch Blog Data
   const fetchBlogPosts = async (page = 1, tag=null, category) => {
     setLoading(true);
-    //We have to call three different APIs:  1)for Blog page   2)for Category page   3)for Tag page
-    let url = `${baseUrl}?page=${page}`;//This is normal URL or Home page URL or API URL form Home page
+    //Calling three different APIs:  1)for Blog page   2)for Category page   3)for Tag page
+    let url = `${baseUrl}?page=${page}`;//Normal API 
     
     if(tag){//if tag is present then API URL 
       url +=`&tag=${tag}`;
@@ -48,18 +48,9 @@ export default function AppContextProvider({ children }) {
   const handlePageChange = (page) => {
 
     navigate({search:`?page=${page}`});
-    //Changing the URL on the basis of page no.(search parameter) to navigate/move between pages (eg. http://localhost:3002/?page=4)
+    //Changing the URL on the basis of page no.(search parameter) to navigate between pages 
     setPage(page);
-
-    //Explanation:
-    //So, whenever we click on Next and Previous button then this handlePageChange() function will be called.
-    // navigate({search:`?page=${page}`}); this means that we are navigating to this path or route whose search parameter or query parameter 
-    //is page and the value of page is changing dynamically with the value of page no. which handlePageChange() function recieved when we click 
-    //on Next and Previous button 
-    
-    //So, we make the changes in search parameter(page no.) in URL i.e navigate to the page/page no. whose value is recieved by 
-    //handlePageChange() function in its input parameter when clicking on Next and Previous button 
-    
+  
   };
 
   const value = {
