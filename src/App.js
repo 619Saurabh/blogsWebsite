@@ -22,7 +22,7 @@ export default function App() {
     //Extracting page no. from search parameters inside URL 
     const page = searchParams.get("page") ?? 1;
 
-   if(location.pathname.includes("tags")){ //Check if current location(or current URL) contain path tags in it,
+   if(location.pathname.includes("tags")){ //Check if current location contain path tags in it,
 
     const tag = location.pathname.split("/").at(-1).replaceAll("-"," ");
     //Extracting the value of tag which is the last path in current location or current URL by splitting paths on the basis of "/" and 
@@ -30,7 +30,7 @@ export default function App() {
     
     fetchBlogPosts(Number(page), tag);
   }
-  else if(location.pathname.includes("categories")){//Check if current location(or current URL) contain path categories in it
+  else if(location.pathname.includes("categories")){//Check if current location contain path categories in it
 
     const category = location.pathname.split('/').at(-1).replaceAll("-"," ");
 
