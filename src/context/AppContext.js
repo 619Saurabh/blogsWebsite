@@ -15,8 +15,8 @@ export default function AppContextProvider({ children }) {
   // Fetch Blog Data
   const fetchBlogPosts = async (page = 1, tag=null, category) => {
     setLoading(true);
-    //Calling three different APIs:  1)for Blog page   2)for Category page   3)for Tag page
-    let url = `${baseUrl}?page=${page}`;//Normal API 
+    //Calling three different APIs: 
+    let url = `${baseUrl}?page=${page}`;
     
     if(tag){//if tag is present then API URL 
       url +=`&tag=${tag}`;
@@ -47,8 +47,7 @@ export default function AppContextProvider({ children }) {
   // Handle When Next and Previous button are clicked
   const handlePageChange = (page) => {
 
-    navigate({search:`?page=${page}`});
-    //Changing the URL on the basis of page no.(search parameter) to navigate between pages 
+    navigate({search:`?page=${page}`});   //Changing the URL on the basis of page no.(search parameter) to navigate between pages 
     setPage(page);
   
   };
