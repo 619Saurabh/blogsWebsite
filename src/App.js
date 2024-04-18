@@ -25,8 +25,6 @@ export default function App() {
    if(location.pathname.includes("tags")){ //Check if current location contain path tags in it,
 
     const tag = location.pathname.split("/").at(-1).replaceAll("-"," ");
-    //Extracting the value of tag which is the last path in current location or current URL by splitting paths on the basis of "/" and 
-    //replcaing hyphen(-) with space(" ") if any contains 
     
     fetchBlogPosts(Number(page), tag);
   }
