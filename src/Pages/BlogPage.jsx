@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
-import { baseUrl } from '../baseUrl';
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import BlogDetails from '../components/BlogDetails';
@@ -16,7 +15,6 @@ const BlogPage = () => {
   const location = useLocation();
   const navigation = useNavigate();
 
- //Consuming data from context(AppContext) using useContext hook
   const {loading, setLoading} = useContext(AppContext);
 
   const blogId = location.pathname.split("/").at(-1); 
@@ -44,7 +42,7 @@ const BlogPage = () => {
     catch(e){//If an error comes during an API call
 
       alert("Error in fetching data in blogId API call");
-      //Re initialising everything again if an error comes while making API call
+      //Re initialising everything again 
       setBlog(null);
       setRelatedBlogs([]);
     }
