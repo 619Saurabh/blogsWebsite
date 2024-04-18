@@ -42,7 +42,7 @@ export default function App() {
 
   }
 
-  }, [location.pathname, location.search]);//So, whenever there is a change in path  or search parameter of location or current URL then this 
+  }, [location.pathname, location.search]);//So, whenever there is a change in path or search parameter of location then this 
   // useEffect() will be triggered 
 
 
