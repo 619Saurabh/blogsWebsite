@@ -25,7 +25,7 @@ const BlogPage = () => {
     let url = `${newBaseUrl}get-blog?blogId=${blogId}`;  
     
     // console.log("URL is:");
-    // console.log(url);//logging API URL on console just to check the API call going to which URL
+    // console.log(url);
 
     //Calling API
     try{
@@ -39,7 +39,7 @@ const BlogPage = () => {
       
     }
 
-    catch(e){//If an error comes during an API call
+    catch(e){
 
       alert("Error in fetching data in blogId API call");
       //Re initialising everything again 
@@ -52,7 +52,7 @@ const BlogPage = () => {
   }
   
   useEffect(() => {
-    if(blogId){//if we have blogId available then we are calling async function fetchRelatedBlogs() to call an API on the basis of blogId
+    if(blogId){//if we have blogId available then 
     
       fetchRelatedBlogs();
       
@@ -83,8 +83,6 @@ const BlogPage = () => {
                 <BlogDetails post={blog}/> 
 
                 <h2 className='font-bold text-2xl mt-[20px]'>Related Blogs</h2>
-
-                {/* Rendering all the data of related blogs stored in relatedBlogs state variable array or list using map() function*/}
                 
                 {
                   relatedBlogs.map((post) => (
@@ -95,7 +93,7 @@ const BlogPage = () => {
                 }
             </div>  
            ) 
-           :// if current blog is not available then show No Blog found in UI
+           :// if current blog is not available then 
            (<div>             
             <p>No Blog Found</p>
           </div>)
