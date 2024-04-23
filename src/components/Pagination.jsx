@@ -7,7 +7,7 @@ export default function Pagination() {
   if (!totalPages) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-stone-400 py-3 border-t-2 border-t-gray-300">
+    <div className="fixed bottom-0 inset-x-0 bg-purple-200 py-3 border-t-2 border-t-gray-300">
       <div className="flex items-center gap-x-3 w-11/12 max-w-2xl mx-auto">
         {page > 1 && (
           <button
